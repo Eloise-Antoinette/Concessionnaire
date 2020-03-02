@@ -1,0 +1,10 @@
+﻿New Spring Starter Project
+
+Dependencies : 
+PostgreSQL Driver
+Spring Web
+Spring Data JPA
+Spring Data JDBC
+
+Creation package model :
+classe Magasin : @Entity (import javax.persistence.Entity;)
