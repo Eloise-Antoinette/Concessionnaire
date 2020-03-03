@@ -1,6 +1,6 @@
 SELECT * FROM magasins;
 
-SELECT * FROM magasins_proches WHERE magasin_name = 2;
+SELECT * FROM magasins_proches WHERE magasin_id = 2;
 
 SELECT * FROM voitures;
 

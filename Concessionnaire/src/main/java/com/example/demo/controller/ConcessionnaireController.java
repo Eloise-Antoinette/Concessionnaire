@@ -25,17 +25,7 @@ public class ConcessionnaireController {
 	ConcessionnaireService myService;
 	
 	//Endpoints du controller
-	@GetMapping("/getMagasin")
-	public List<Magasin> getMagasin() {
-		return myService.findAllMagasins();
-	}
-	
-	@GetMapping("/getMagasinsProches")
-	public List<Magasin> getMagasinProche(@RequestParam("magasin") String magasinName) {
-		return myService.findAllMagasinsProches(magasinName).getMagasinsProches();
-		
-	}
-	
+
 	@GetMapping("/voitures") 
 	public List<Voiture> getAllVoitures() {
 		return myService.findAllVoitures();
@@ -70,5 +60,16 @@ public class ConcessionnaireController {
 	@GetMapping("/getVoituresWithParams")
 	public List<Voiture> getVoitureByNbPlacesAndMagasinVilleName(@RequestParam int nbPlaces, @RequestParam String magasinVilleName){
 		return myService.getVoitureByNbPlacesAndMagasinVilleName(nbPlaces, magasinVilleName);
+
+	
+	@GetMapping("/getMagasin")
+	public List<Magasin> getMagasin() {
+		return myService.findAllMagasins();
+	}
+	
+	@GetMapping("/getMagasinsProches")
+	public List<Magasin> getMagasinProche(@RequestParam("magasin") String magasinName) {
+		return myService.findAllMagasinsProches(magasinName).getMagasinsProches();
+
 	}
 }
