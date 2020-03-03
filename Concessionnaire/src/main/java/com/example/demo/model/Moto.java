@@ -26,6 +26,8 @@ public class Moto {
 	@ManyToOne 
 	private Magasin magasin;
 	
+	
+	//Getters & setters
 	public Integer getId() {
 		return id;
 	}

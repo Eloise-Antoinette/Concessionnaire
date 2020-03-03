@@ -17,12 +17,15 @@ import com.example.demo.repository.VoitureRepository;
 @Service
 public class ConcessionnaireService {
 	
+	//Instanciation des repositories JPA
 	@Autowired
 	MagasinRepository magasinRepo;
-	
 	@Autowired
 	VoitureRepository voitureRepo;
 
+	
+	
+	//méthodes de classes
 	public List<Magasin> findAllMagasins() {
 		List<Magasin> magasins = magasinRepo.findAll();
 		return magasins;
