@@ -12,4 +12,4 @@ UPDATE voitures SET prix = 16200, reserve = '0' WHERE id = 2;
 
 DELETE FROM voitures WHERE id = 7;
 
-SELECT DISTINCT modele, prix, reserve, magasins.name FROM voitures, magasins, villes WHERE voitures.magasin = magasins.id AND voitures.nb_places = 5 AND magasins.ville = villes.id AND villes.name = 'Montpellier';
+SELECT modele, prix, reserve, magasins.name FROM voitures, magasins, villes WHERE voitures.magasin = magasins.id AND voitures.nb_places = 5 AND magasins.ville = villes.id AND villes.name = 'Montpellier';

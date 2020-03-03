@@ -66,4 +66,9 @@ public class ConcessionnaireController {
 		int idVoiture = Integer.parseInt(id);
 		myService.supprimerVoiture(idVoiture);
 	}
+
+	@GetMapping("/getVoituresWithParams")
+	public List<Voiture> getVoitureByNbPlacesAndMagasinVilleName(@RequestParam int nbPlaces, @RequestParam String magasinVilleName){
+		return myService.getVoitureByNbPlacesAndMagasinVilleName(nbPlaces, magasinVilleName);
+	}
 }

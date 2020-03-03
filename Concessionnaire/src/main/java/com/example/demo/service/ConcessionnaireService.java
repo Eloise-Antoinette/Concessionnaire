@@ -58,4 +58,8 @@ public class ConcessionnaireService {
 	public void supprimerVoiture(int id) {
 		voitureRepo.deleteById(id);
 	}
+	
+	public List<Voiture> getVoitureByNbPlacesAndMagasinVilleName(int nbPlaces, String magasinVilleName){
+		return voitureRepo.getModeleByNbPlacesAndMagasin_ville_nameEquals(nbPlaces, magasinVilleName);
+	}
 }
