@@ -100,9 +100,12 @@ INSERT INTO motos (modele, prix, reserve, cylindree, magasin) VALUES ('harley', 
 
 
 //table de jointures
-INSERT INTO magasins_proches (magasin_id, magasin_near) VALUES (1, 2);
-INSERT INTO magasins_proches (magasin_id, magasin_near) VALUES (1, 3);
-INSERT INTO magasins_proches (magasin_id, magasin_near) VALUES (2, 3);
+INSERT INTO magasins_proches (magasin_id, magasin_proche) VALUES (1, 2);
+INSERT INTO magasins_proches (magasin_id, magasin_proche) VALUES (1, 3);
+INSERT INTO magasins_proches (magasin_id, magasin_proche) VALUES (2, 1);
+INSERT INTO magasins_proches (magasin_id, magasin_proche) VALUES (2, 3);
+INSERT INTO magasins_proches (magasin_id, magasin_proche) VALUES (3, 1);
+INSERT INTO magasins_proches (magasin_id, magasin_proche) VALUES (3, 2);
 
 
 //table de jointures 
