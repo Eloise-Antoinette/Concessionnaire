@@ -20,9 +20,11 @@ import com.example.demo.service.ConcessionnaireService;
 @RestController
 public class ConcessionnaireController {
 	
+	//instanciation du service
 	@Autowired
 	ConcessionnaireService myService;
 	
+	//Endpoints du controller
 	@GetMapping("/getMagasin")
 	public List<Magasin> getMagasin() {
 		return myService.findAllMagasins();
@@ -39,7 +41,7 @@ public class ConcessionnaireController {
 		return myService.findAllVoitures();
 	}
 	
-	
+    //CRUD des voitures
 	@GetMapping("/voitures/{id}")
 	public Optional<Voiture> getVoiture(@PathVariable String id) {
 		int idVoiture = Integer.parseInt(id);

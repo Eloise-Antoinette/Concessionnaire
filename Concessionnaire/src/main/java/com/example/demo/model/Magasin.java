@@ -1,7 +1,6 @@
 package com.example.demo.model;
 
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,10 +12,9 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-
+//Liasion à la base de donnée via JPA
 @Entity
 @Table(name = "magasins")
 public class Magasin {
@@ -30,6 +28,7 @@ public class Magasin {
 	@ManyToOne
 	private Ville ville;
 	
+	
 	@JsonIgnoreProperties({"magasinsProches"})
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
@@ -39,6 +38,7 @@ public class Magasin {
 	private List<Magasin> magasinsProches;
 
 	
+	//Getters & setters
 	public List<Magasin> getMagasinsProches() {
 		return magasinsProches;
 	}
@@ -71,12 +71,5 @@ public class Magasin {
 		this.ville = ville;
 	}
 
-	/*public List<Magasin> getMagasinsProches() {
-		return magasinsProches;
-	}
-
-	public void setMagasinsProches(List<Magasin> magasinsProches) {
-		this.magasinsProches = magasinsProches;
-	}*/
 
 }
