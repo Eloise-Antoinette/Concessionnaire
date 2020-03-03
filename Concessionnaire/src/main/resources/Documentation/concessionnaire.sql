@@ -34,18 +34,7 @@ PRIMARY KEY (id),
 FOREIGN KEY (magasin) REFERENCES magasins(id)
 );
 
-CREATE TABLE motos(
-id SERIAL,
-modele VARCHAR(100),
-prix NUMERIC(100),
-reserve BOOLEAN,
-cylindree INTEGER,
-magasin INTEGER,
-PRIMARY KEY (id),
-FOREIGN KEY (magasin) REFERENCES magasins(id)
-);
-
-// table de jointure
+/* table de jointure*/
 
 CREATE TABLE join_mag_pres (
 magasin_id INTEGER,
@@ -90,25 +79,17 @@ INSERT INTO voitures (modele, prix, reserve, nb_places, magasin) VALUES ('honda_
 INSERT INTO voitures (modele, prix, reserve, nb_places, magasin) VALUES ('honda_civic', 2000, '0', 5, 2);
 INSERT INTO voitures (modele, prix, reserve, nb_places, magasin) VALUES ('honda_civic', 2000, '0', 5,  5);
 
-INSERT INTO motos (modele, prix, reserve, cylindree, magasin) VALUES ('yamaha_mt_09', 9000, '1', 800, 5);
-INSERT INTO motos (modele, prix, reserve, cylindree, magasin) VALUES ('yamaha_mt_10', 16500, '0', 600, 4);
-INSERT INTO motos (modele, prix, reserve, cylindree,  magasin) VALUES ('suzuki_gsx', 8899, '1', 950, 3);
-INSERT INTO motos (modele, prix, reserve, cylindree, magasin) VALUES ('honda_cb', 2000, '1', 1150, 2);
-INSERT INTO motos (modele, prix, reserve, cylindree, magasin) VALUES ('honda_cb', 12500, '1', 1050, 1);
-INSERT INTO motos (modele, prix, reserve, cylindree, magasin) VALUES ('bmw_g_310', 6000, '0', 750,  2);
-INSERT INTO motos (modele, prix, reserve, cylindree, magasin) VALUES ('harley', 12800, '0', 1250, 5);
+
+/*table de jointures*/
+INSERT INTO magasins_proches (magasin_id, magasin_proche_id) VALUES (1, 2);
+INSERT INTO magasins_proches (magasin_id, magasin_proche_id) VALUES (1, 3);
+INSERT INTO magasins_proches (magasin_id, magasin_proche_id) VALUES (2, 1);
+INSERT INTO magasins_proches (magasin_id, magasin_proche_id) VALUES (2, 3);
+INSERT INTO magasins_proches (magasin_id, magasin_proche_id) VALUES (3, 1);
+INSERT INTO magasins_proches (magasin_id, magasin_proche_id) VALUES (3, 2);
 
 
-//table de jointures
-INSERT INTO magasins_proches (magasin_id, magasin_proche) VALUES (1, 2);
-INSERT INTO magasins_proches (magasin_id, magasin_proche) VALUES (1, 3);
-INSERT INTO magasins_proches (magasin_id, magasin_proche) VALUES (2, 1);
-INSERT INTO magasins_proches (magasin_id, magasin_proche) VALUES (2, 3);
-INSERT INTO magasins_proches (magasin_id, magasin_proche) VALUES (3, 1);
-INSERT INTO magasins_proches (magasin_id, magasin_proche) VALUES (3, 2);
-
-
-//table de jointures 
+/* table de jointures */
 INSERT INTO join_mag_pres (magasin_id, prestation_id) VALUES (1, 1);
 INSERT INTO join_mag_pres (magasin_id, prestation_id) VALUES (1, 3);
 INSERT INTO join_mag_pres (magasin_id, prestation_id) VALUES (2, 3);
