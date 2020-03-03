@@ -1,5 +1,6 @@
-CREATE DATABASE
+CREATE DATABASE concessionnaire;
 
+\c concessionnaire
 
 CREATE TABLE villes(
 id SERIAL,
@@ -29,6 +30,17 @@ modele VARCHAR(100),
 prix NUMERIC(100),
 reserve BOOLEAN,
 nb_places INTEGER,
+magasin INTEGER,
+PRIMARY KEY (id),
+FOREIGN KEY (magasin) REFERENCES magasins(id)
+);
+
+CREATE TABLE motos(
+id SERIAL,
+modele VARCHAR(100),
+prix NUMERIC(100),
+reserve BOOLEAN,
+cylindree INTEGER,
 magasin INTEGER,
 PRIMARY KEY (id),
 FOREIGN KEY (magasin) REFERENCES magasins(id)
@@ -69,7 +81,7 @@ INSERT INTO prestations (label, tarif) VALUES ('pression pneus', 0);
 INSERT INTO prestations (label, tarif) VALUES ('peinture', 300);
 INSERT INTO prestations (label, tarif) VALUES ('lustrage', 50);
 INSERT INTO prestations (label, tarif) VALUES ('controle_technique', 50);
-
+ 
 
 INSERT INTO voitures (modele, prix, reserve, nb_places, magasin) VALUES ('peugeot_206', 1000, '1', 4, 5);
 INSERT INTO voitures (modele, prix, reserve, nb_places, magasin) VALUES ('ford_fiesta', 10000, '0', 5, 4);
@@ -88,8 +100,8 @@ INSERT INTO magasins_proches (magasin_id, magasin_proche_id) VALUES (2, 3);
 INSERT INTO magasins_proches (magasin_id, magasin_proche_id) VALUES (3, 1);
 INSERT INTO magasins_proches (magasin_id, magasin_proche_id) VALUES (3, 2);
 
+/*table de jointures */
 
-/* table de jointures */
 INSERT INTO join_mag_pres (magasin_id, prestation_id) VALUES (1, 1);
 INSERT INTO join_mag_pres (magasin_id, prestation_id) VALUES (1, 3);
 INSERT INTO join_mag_pres (magasin_id, prestation_id) VALUES (2, 3);
