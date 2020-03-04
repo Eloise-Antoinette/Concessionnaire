@@ -19,5 +19,3 @@ public interface VoitureRepository   extends JpaRepository<Voiture, Integer>{
      */
     List<Voiture> getModeleByNbPlacesAndMagasin_ville_nameEquals(int nbPlaces, String ville);
 }
-
-
