@@ -61,3 +61,7 @@ public class ConcessionnaireService {
 		return voitureRepo.getModeleByNbPlacesAndMagasin_ville_nameEquals(nbPlaces, magasinVilleName);
 	}
 }
+
+
+
+
