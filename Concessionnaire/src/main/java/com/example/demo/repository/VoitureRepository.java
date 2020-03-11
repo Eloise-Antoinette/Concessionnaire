@@ -9,7 +9,7 @@ public interface VoitureRepository   extends JpaRepository<Voiture, Integer>{
     /**
      * La fonction ci-dessous retranscrit la requête présentée ici.
      * 
-     * SELECT  modele, prix, reserve, magasins.name FROM voitures,
+     *  SELECT modele, prix, reserve, magasins.name FROM voitures,
      *  magasins, villes WHERE voitures.magasin = magasins.id AND voitures.nb_places = 5 
      *  AND magasins.ville = villes.id AND villes.name = 'Montpellier';
      * 
@@ -19,5 +19,6 @@ public interface VoitureRepository   extends JpaRepository<Voiture, Integer>{
      */
     List<Voiture> getModeleByNbPlacesAndMagasin_ville_nameEquals(int nbPlaces, String ville);
 }
+
 
 
